@@ -1,3 +1,8 @@
+## 项目说明
+
+> 项目使用`Dioxus+Tailwindcss`进行开发
+本项目是一个基于Dioxus的桌面端项目，项目采用Dioxus的DSL进行开发，项目采用Tailwindcss进行样式开发，项目采用DX进行项目管理。
+
 ## DX命令说明
 
 ```
