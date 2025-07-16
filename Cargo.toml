@@ -1,5 +1,5 @@
 [package]
-name = "tailwind"
+name = "dioxus-tailwind"
 version = "0.1.0"
 authors = ["jiale zhou <z429213642@gmail.com>"]
 edition = "2021"
