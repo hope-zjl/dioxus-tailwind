@@ -36,4 +36,6 @@ dx serve --platform desktop
 dx bundle --platform desktop
 # 监听Tailwind
 npx tailwindcss -i ./input.css -o ./assets/tailwind.css --watch
+# 构建CSS文件
+npm run build:css
 ```

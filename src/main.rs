@@ -4,7 +4,8 @@ mod view;
 use dioxus::prelude::*;
 use view::conf::Route;
 
-static CSS: Asset = asset!("/assets/tailwind.css");
+static TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
+static DAISY_CSS: Asset = asset!("/assets/main.css");
 
 fn main() {
     dioxus::launch(app);
@@ -13,7 +14,8 @@ fn main() {
 #[component]
 fn app() -> Element {
     rsx! {
-        document::Stylesheet { href: CSS }
+        document::Stylesheet { href: TAILWIND_CSS }
+        document::Stylesheet { href: DAISY_CSS }
         Router::<Route> {}
     }
 }
