@@ -1,6 +1,6 @@
 ## 项目说明
 
-> 项目使用`Dioxus+Tailwindcss`进行开发
+> 项目使用`Dioxus+Tailwindcss+daisyUI`开发
 
 ## DX命令说明
 
