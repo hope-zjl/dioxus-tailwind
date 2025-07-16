@@ -1,10 +1,11 @@
-## 项目说明
+# 项目说明
 
 > 项目使用`Dioxus+Tailwindcss+daisyUI`开发
 
 ## DX命令说明
 
-```
+```shell
+
 build 构建 Dioxus 项目及其所有资源
 translate 将源文件转换为 Dioxus 代码
 serve 构建、监视并运行 Dioxus 项目及其所有资源
@@ -38,4 +39,5 @@ dx bundle --platform desktop
 npx tailwindcss -i ./input.css -o ./assets/tailwind.css --watch
 # 构建CSS文件
 npm run build:css
+
 ```
