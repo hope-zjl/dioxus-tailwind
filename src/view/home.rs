@@ -4,9 +4,7 @@ use crate::view::conf::Route;
 #[component]
 pub fn Home() -> Element {
     rsx! {
-        div {
-            "Hello, 首页!"
-        }
+        div { "Hello, 首页!" }
         Outlet::<Route> {}
     }
 }
