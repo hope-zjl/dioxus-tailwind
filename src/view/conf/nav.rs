@@ -45,6 +45,10 @@ pub fn NavBar() -> Element {
                         }
                     }
                 }
+                div {
+                    class: "flex items-center space-x-6 rtl:space-x-reverse",
+                    "关于",
+                }
             }
         }
         Outlet::<Route> {}
