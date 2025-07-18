@@ -178,9 +178,6 @@
   }
 }
 @layer utilities {
-  .visible {
-    visibility: visible;
-  }
   .input {
     cursor: text;
     border: var(--border) solid #0000;
