@@ -1,5 +1,6 @@
 #![windows_subsystem = "windows"]
 mod view;
+mod server;
 
 use dioxus::prelude::*;
 use view::conf::Route;

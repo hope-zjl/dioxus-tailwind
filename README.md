@@ -1,6 +1,6 @@
 # 项目说明
 
-> 项目使用`Dioxus+Tailwindcss+daisyUI`开发
+> 项目使用`Dioxus+Tailwindcss`开发
 
 ## 启动编译命令
 
