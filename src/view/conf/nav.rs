@@ -19,6 +19,7 @@ pub fn NavBar() -> Element {
                             Link {
                                 to: Route::Home,
                                 onclick: move |_| is_selected.set(Route::Home),
+                                class: "font-bold",
                                 "首页"
                             }
                         }
@@ -26,6 +27,7 @@ pub fn NavBar() -> Element {
                             Link {
                                 to: Route::Top1,
                                 onclick: move |_| is_selected.set(Route::Top1),
+                                class: "font-bold",
                                 "Top1"
                             }
                         }
@@ -33,6 +35,7 @@ pub fn NavBar() -> Element {
                             Link {
                                 to: Route::Top2,
                                 onclick: move |_| is_selected.set(Route::Top2),
+                                class: "font-bold",
                                 "Top2"
                             }
                         }
@@ -40,15 +43,13 @@ pub fn NavBar() -> Element {
                             Link {
                                 to: Route::Top3,
                                 onclick: move |_| is_selected.set(Route::Top3),
+                                class: "font-bold",
                                 "Top3"
                             }
                         }
                     }
                 }
-                div {
-                    class: "flex items-center space-x-6 rtl:space-x-reverse",
-                    "关于",
-                }
+                div { class: "flex items-center space-x-6 rtl:space-x-reverse", "关于" }
             }
         }
         Outlet::<Route> {}

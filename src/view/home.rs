@@ -4,17 +4,30 @@ use crate::view::conf::Route;
 #[component]
 pub fn Home() -> Element {
     rsx! {
-        div {
-            class: "relative",
+        div { class: "relative",
             input {
-                type: "text",
-                id: "floating_filled",
-                class: "block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer",
+                r#type: "email",
+                id: "hs-floating-underline-input-email",
+                class: "peer py-4 px-0 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-gray-200 sm:text-sm placeholder:text-transparent focus:border-t-transparent focus:border-x-transparent focus:border-b-blue-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:border-b-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600 dark:focus:border-b-neutral-600
+    focus:pt-6
+    focus:pb-2
+    not-placeholder-shown:pt-6
+    not-placeholder-shown:pb-2
+    autofill:pt-6
+    autofill:pb-2",
                 placeholder: " ",
             }
             label {
-                for: "floating_filled",
-                class: "absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto",
+                r#for: "hs-floating-underline-input-email",
+                class: "absolute top-0 start-0 py-4 px-0 h-full sm:text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+      peer-focus:scale-90
+      peer-focus:translate-x-0.5
+      peer-focus:-translate-y-1.5
+      peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+      peer-not-placeholder-shown:scale-90
+      peer-not-placeholder-shown:translate-x-0.5
+      peer-not-placeholder-shown:-translate-y-1.5
+      peer-not-placeholder-shown:text-gray-500 dark:peer-not-placeholder-shown:text-neutral-500 dark:text-neutral-500",
                 "测试输入框"
             }
         }

@@ -15,8 +15,3 @@ npx tailwindcss -i ./input.css -o ./assets/tailwind.css --watch
 npm run build:css
 
 ```
-
-## 参考ui库
-
-[Tailwind CSS UI 组件库](https://flowbite.com/)  
-[daisyui UI 组件库](https://daisyui.com/)

@@ -39,3 +39,9 @@ help 显示本帮助信息或指定子命令的帮助
 -h, --help 显示帮助
 -V, --version 显示版本号
 ```
+
+> 参考ui库
+
+[flowbite UI 组件库](https://flowbite.com/)  
+[daisyui UI 组件库](https://daisyui.com/)  
+[preline UI 组件库](https://preline.co/)
