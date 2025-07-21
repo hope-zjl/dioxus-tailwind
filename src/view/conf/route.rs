@@ -1,7 +1,9 @@
 use dioxus::prelude::*;
-use crate::view::top::{Top1, Top2, Top3};
-use crate::view::home::Home;
-use super::nav::NavBar;
+use crate::view::{
+    conf::nav::NavBar,
+    home::Home,
+    top::{Top1, Top2, Top3},
+};
 
 #[derive(Routable, Clone, PartialEq)]
 pub enum Route {

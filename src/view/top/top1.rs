@@ -4,6 +4,8 @@ use dioxus::{logger::tracing::info, prelude::*};
 pub fn Top1() -> Element {
     info!(">>> 进入 top1 >>>>>");
     rsx! {
-        div { "Hello Top1" }
+        div {
+            span { "Hello,top1!" }
+        }
     }
 }
