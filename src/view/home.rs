@@ -9,8 +9,7 @@ pub fn Home() -> Element {
         SuspenseBoundary {
             // 加载状态显示
             fallback: |_| rsx! {
-                div {
-                    class: "text-center",
+                div { class: "text-center",
                     span { class: "loading loading-dots loading-lg" }
                 }
             },
