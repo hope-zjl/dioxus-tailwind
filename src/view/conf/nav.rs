@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use crate::view::conf::Route;
+use crate::view::conf::{Route, loading::Loading};
 
 #[component]
 pub fn NavBar() -> Element {
@@ -52,6 +52,6 @@ pub fn NavBar() -> Element {
                 div { class: "flex items-center space-x-6 rtl:space-x-reverse", "关于" }
             }
         }
-        Outlet::<Route> {}
+        Loading { Outlet::<Route> {} }
     }
 }
