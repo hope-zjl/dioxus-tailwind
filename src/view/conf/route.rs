@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 use crate::view::{
     conf::nav::NavBar,
     home::Home,
-    top::{Top1, Top2, Top3},
+    top::{Top1, Top2, Top3, Local},
 };
 
 #[derive(Routable, Clone, PartialEq)]
@@ -16,4 +16,6 @@ pub enum Route {
     Top2,
     #[route("/top3")]
     Top3,
+    #[route("/local")]
+    Local,
 }

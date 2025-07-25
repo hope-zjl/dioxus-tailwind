@@ -49,7 +49,14 @@ pub fn NavBar() -> Element {
                         }
                     }
                 }
-                div { class: "flex items-center space-x-6 rtl:space-x-reverse", "关于" }
+                div { class: "flex items-center space-x-6 rtl:space-x-reverse",
+                    Link {
+                        class: if *is_selected.read() == Route::Local { selected_class } else { default_class },
+                        to: Route::Local,
+                        onclick: move |_| is_selected.set(Route::Local),
+                        "本机"
+                    }
+                }
             }
         }
         Loading { Outlet::<Route> {} }
