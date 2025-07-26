@@ -65,13 +65,13 @@ let cpu_name = s.cpus().get(0).unwrap();
                         }
                     }
                     tr { class: "bg-white dark:bg-gray-800",
-                            th {
-                                scope: "row",
-                                class: "px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white",
-                                "CPU"
-                            }
-                            td { class: "px-6 py-4", "{cpu_name.brand()}" }
+                        th {
+                            scope: "row",
+                            class: "px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white",
+                            "CPU"
                         }
+                        td { class: "px-6 py-4", "{cpu_name.brand()}" }
+                    }
                 }
             }
         }
