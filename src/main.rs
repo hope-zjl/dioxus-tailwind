@@ -21,7 +21,7 @@ fn main() {
             )
             .launch(App);
     }
-
+    // 隐藏工具栏 GitHub解决  https://github.com/DioxusLabs/dioxus/discussions/3039
     #[cfg(not(feature = "desktop"))]
     fn launch_app() {
         dioxus::launch(App);
