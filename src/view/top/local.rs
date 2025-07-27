@@ -1,18 +1,14 @@
+use chrono::{DateTime, FixedOffset};
 use dioxus::prelude::*;
-use sysinfo::{Networks, Disks, System, RefreshKind, CpuRefreshKind};
+use sysinfo::{CpuRefreshKind, Disks, Networks, RefreshKind, System};
 
 #[component]
 pub fn Local() -> Element {
-    let sys_name = sys_info::hostname().unwrap();
-    let os_type = sys_info::os_type().unwrap();
     let networks = Networks::new_with_refreshed_list();
     let system_version = System::os_version().unwrap();
-
-let s = System::new_with_specifics(
-    RefreshKind::nothing().with_cpu(CpuRefreshKind::everything()),
-);
-let cpu_name = s.cpus().get(0).unwrap();
-
+    let s =
+        System::new_with_specifics(RefreshKind::nothing().with_cpu(CpuRefreshKind::everything()));
+    let cpu_name = s.cpus().get(0).unwrap();
 
     rsx! {
         div { class: "relative overflow-x-auto",
@@ -22,17 +18,25 @@ let cpu_name = s.cpus().get(0).unwrap();
                         th {
                             scope: "row",
                             class: "px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white",
-                            "系统名称"
+                            "启动时间"
                         }
-                        td { class: "px-6 py-4", "{sys_name}" }
+                        td { class: "px-6 py-4", "{get_boot_time()}" }
                     }
                     tr { class: "bg-white dark:bg-gray-800",
                         th {
                             scope: "row",
                             class: "px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white",
-                            "系统类型"
+                            "设备名称"
                         }
-                        td { class: "px-6 py-4", "{os_type} {system_version}" }
+                        td { class: "px-6 py-4", "{System::host_name().unwrap()}" }
+                    }
+                    tr { class: "bg-white dark:bg-gray-800",
+                        th {
+                            scope: "row",
+                            class: "px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white",
+                            "系统名称"
+                        }
+                        td { class: "px-6 py-4", "{System::name().unwrap()} {system_version}" }
                     }
                     for (_interface_name , network) in &networks {
                         tr { class: "bg-white dark:bg-gray-800",
@@ -86,7 +90,11 @@ fn disk_space() -> String {
         disk_size_available += disk.available_space();
         disk_size_total += disk.total_space();
     }
-    format!("{:.2}%({})", (disk_size_available as f64 / disk_size_total as f64) * 100.0, format_bytes(disk_size_available))
+    format!(
+        "{:.2}%({})",
+        (disk_size_available as f64 / disk_size_total as f64) * 100.0,
+        format_bytes(disk_size_available)
+    )
 }
 
 fn format_bytes(bytes: u64) -> String {
@@ -102,4 +110,17 @@ fn format_bytes(bytes: u64) -> String {
 
     // 保留两位小数并拼接单位
     format!("{:.2} {}", value, units[unit_index])
+}
+
+fn time_utc_8() -> FixedOffset {
+    FixedOffset::east_opt(8 * 60 * 60).unwrap()
+}
+
+fn get_boot_time() -> String {
+    let boot_time = System::boot_time() as i64;
+    let date_date_time = DateTime::from_timestamp(boot_time, 0).unwrap();
+    date_date_time
+        .with_timezone(&time_utc_8())
+        .format("%Y-%m-%d %H:%M:%S")
+        .to_string()
 }

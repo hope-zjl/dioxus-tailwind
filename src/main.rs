@@ -8,7 +8,6 @@ use view::conf::Route;
 static TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
 fn main() {
-    // dioxus::launch(app);
     #[cfg(feature = "desktop")]
     fn launch_app() {
         use dioxus::desktop::tao;
