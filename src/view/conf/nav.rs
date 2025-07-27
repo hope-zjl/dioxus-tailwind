@@ -39,12 +39,12 @@ pub fn NavBar() -> Element {
                                 "Top2"
                             }
                         }
-                        li { class: if *is_selected.read() == Route::Top3 { selected_class } else { default_class },
+                        li { class: if *is_selected.read() == Route::Ping { selected_class } else { default_class },
                             Link {
-                                to: Route::Top3,
-                                onclick: move |_| is_selected.set(Route::Top3),
+                                to: Route::Ping,
+                                onclick: move |_| is_selected.set(Route::Ping),
                                 class: "font-bold",
-                                "Top3"
+                                "Ping"
                             }
                         }
                     }
