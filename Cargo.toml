@@ -9,6 +9,8 @@ edition = "2021"
 [dependencies]
 chrono = "0.4.41"
 dioxus = { version = "0.6.3", features = ["router", "fullstack"] }
+futures = "0.3.31"
+surge-ping = "0.8.2"
 sysinfo = "0.36.1"
 tokio = { version = "1.47.0", features = ["time"] }
 
